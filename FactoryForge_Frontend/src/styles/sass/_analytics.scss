@@ -1,0 +1,133 @@
+.background-frame-analytics {
+  color: whitesmoke;
+  overflow: hidden;
+  padding: 1rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: larger;
+  justify-content: center;
+  max-width: 500px;
+  gap: 10px;
+  margin: 25px 0px;
+  text-align: start;
+
+  .list-item {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  ul {
+    max-height: 15rem;
+    overflow-y: auto;
+    width: 95%;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  li {
+    width: fit-content;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h4 {
+    margin-top: 10px;
+  }
+}
+
+.background-frame-analytics-top-seller {
+  height: 15rem;
+  color: whitesmoke;
+  overflow: hidden;
+  padding: 1rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 30rem;
+  height: 17rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: larger;
+  justify-content: center;
+  max-width: 500px;
+  margin: 25px 0px;
+  .list-item {
+    width: 25rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  ul {
+    max-height: 15rem;
+    overflow-y: auto;
+    width: fit-content;
+    padding: 2px;
+  }
+  li {
+    width: auto;
+  }
+  h2 {
+    margin-bottom: 10px;
+  }
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  h4 {
+    margin-top: 10px;
+  }
+}
+
+.analytics-overlay {
+  display: flex;
+  max-width: 1150px;
+  min-width: 500px;
+  overflow: scroll;
+  gap: 25px;
+  padding: 15px;
+  width: 100vw;
+}
+
+.small-screen-change-span {
+  width: 55%;
+  @media screen and (max-width: 1980px) {
+    flex-direction: column;
+  }
+}
+
+.background-frame-piechart {
+  @extend .background-frame-analytics;
+  height: auto;
+  text-align: center;
+}
+
+.background-frame-piechart {
+  width: 80%;
+}
+
+.analytics-cotainer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  gap: 10px;
+}

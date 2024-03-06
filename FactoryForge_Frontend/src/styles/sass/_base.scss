@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1;
+  transition: margin-left 0.3s ease;
+  margin-left: 0;
+}
+
+.sidebar-container.sidebar-open {
+  transform: translateX(0);
+}
+
+.sidebar-container.sidebar-open + main {
+  margin-left: 170px;
+  overflow-y: auto;
+}
+
+.sidebar-container.sidebar-closed + main {
+  margin-left: 70px;
+  overflow-y: auto;
+}

@@ -1,0 +1,481 @@
+.list-item-orders {
+  @extend .list-item;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 1000px;
+  max-width: 1100px;
+  span:last-child {
+    text-align: none;
+  }
+
+  button {
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 5px 15px;
+    margin-left: 15px;
+    background-color: #fdff00;
+    color: black;
+  }
+}
+
+.background-frame-orders {
+  @extend .background-frame;
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  min-width: 1020px;
+}
+
+.co-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  min-width: 190px;
+  max-width: 190px;
+}
+
+.rmo-fields {
+  @extend .co-fields;
+  gap: 2.5px;
+  height: 80%;
+  margin-top: 10px;
+}
+
+.co-productlist {
+  height: 80%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin-top: 10px;
+  min-width: 260px;
+  max-width: 260px;
+  li {
+    list-style: none;
+  }
+}
+
+.co-productlist::-webkit-scrollbar {
+  display: none;
+}
+
+.showDetails {
+  @extend .list-item-orders;
+  transition: height 0.5s ease;
+  overflow: hidden;
+  height: 255px;
+  display: flex;
+}
+
+.showDetailsRawMats {
+  @extend .showDetails;
+  height: 170px;
+}
+
+.leftContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.client {
+  display: flex;
+  gap: 20px;
+}
+
+.clientDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 300px;
+  max-width: 300px;
+  overflow: scroll;
+  height: 135px;
+}
+
+.clientNote {
+  display: flex;
+  flex-direction: column;
+
+  textarea {
+    color: white;
+    width: 400px;
+    max-height: 45px;
+    min-height: 45px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    border-radius: 7.5px;
+    background-color: rgb(15, 15, 15);
+    padding: 10px;
+    border: none;
+    max-width: 380px;
+  }
+  textarea:focus {
+    outline: none;
+  }
+}
+
+.duedate {
+  display: flex;
+  flex-direction: column;
+  min-width: 115px;
+  align-items: flex-start;
+  gap: 15px;
+  justify-content: center;
+  min-height: 135px;
+  max-height: 135px;
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+  }
+
+  input[type="date"] {
+    color: white;
+  }
+
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+  }
+
+  input[type="datetime-local"] {
+    color: white;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  button {
+    box-shadow: none;
+    background: #3a3646;
+    color: white;
+    max-width: 90px;
+    margin: 0;
+    margin-left: -3px;
+  }
+
+  input {
+    background-color: #191a24;
+    border: none;
+    color: white;
+    font-size: 15px;
+    max-width: 120px;
+    box-shadow: rgb(0, 0, 0, 0.5);
+  }
+
+  &.rawmats {
+    input {
+      max-width: 185px;
+    }
+  }
+}
+
+.orderStatus {
+  display: flex;
+  flex-direction: column;
+}
+
+.orderStatusSelection {
+  height: 100px;
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+
+  button {
+    height: 45px;
+    margin: 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3a3646;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 5px;
+
+    &.active {
+      background-color: green;
+    }
+  }
+
+  button:hover {
+    background-color: #7b37d1;
+  }
+
+  &.rawmats {
+    grid-template-columns: repeat(1, 1fr);
+    button {
+      height: 30px;
+    }
+  }
+}
+
+.rightContainer {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  gap: 25px;
+
+  &.rawmats {
+    justify-content: center;
+    gap: 50px;
+  }
+}
+
+.orderedProducts {
+  height: 100%;
+}
+
+.orderedProductsList {
+  display: flex;
+  min-width: 225px;
+  height: 230px;
+  justify-content: flex-start;
+  margin-top: 5px;
+  .list-item {
+    display: flex;
+    padding: 5px;
+    width: 180px;
+  }
+  overflow: scroll;
+}
+
+.productsList {
+}
+
+.idSpan {
+  max-width: 70px;
+  min-width: 60px;
+}
+
+.quantitySpan {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 15px;
+  min-width: 105px;
+  align-items: center;
+}
+
+.xSave {
+  display: flex;
+  gap: 7px;
+  position: relative;
+  align-items: center;
+
+  .xButton {
+    background: #fcff00;
+    color: black;
+    width: 35px;
+    position: absolute;
+    right: 125px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+  }
+  .saveDelete {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .delete {
+      background-color: red;
+      box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+      color: white;
+    }
+  }
+
+  .saveButton {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+    background-color: #191a24;
+    color: white;
+  }
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  max-height: 45px;
+}
+
+.headerButtons {
+  display: flex;
+  gap: 15px;
+  margin-left: -50px;
+}
+
+.pastOrders {
+  color: white;
+  border-radius: 5px;
+  background: #191a24;
+  width: 120px;
+  border: none;
+  margin-right: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  &.active {
+    background-color: #7b37d1;
+  }
+}
+
+.pastOrders:hover {
+  cursor: pointer;
+}
+
+.createOrder {
+  @extend .pastOrders;
+
+  &.active {
+    background-color: #7b37d1;
+  }
+}
+
+.selectPage {
+  display: flex;
+  max-width: 635px;
+  min-width: 635px;
+
+  h1 {
+    margin-right: -15px;
+    margin-left: 2rem;
+    color: whitesmoke;
+    text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    &.active {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      padding: 4px;
+      background: linear-gradient(
+        135deg,
+        rgb(94, 29, 179) 0%,
+        rgba(111, 36, 208, 0.5) 100%
+      );
+      border-radius: 5px;
+    }
+  }
+
+  h1:hover {
+    cursor: pointer;
+  }
+}
+
+.add-order-form {
+  @extend .add-form;
+  max-height: 400px;
+  min-height: 275px;
+  top: 300px;
+  min-width: 325px;
+  max-width: 550px;
+  height: auto;
+}
+
+.formdata_inputfields {
+  display: flex;
+  flex-direction: row;
+  min-width: 0px;
+  form {
+    display: flex;
+    gap: 45px;
+    input {
+      padding: 5px;
+    }
+  }
+}
+
+.sendButton {
+  position: absolute;
+  width: 80px !important;
+  right: 80px !important;
+}
+
+.left-side-order-form {
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  gap: 15px;
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+  }
+
+  input[type="date"] {
+    color: white;
+  }
+
+  input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+  }
+
+  input[type="datetime-local"] {
+    color: white;
+  }
+
+  textarea {
+    max-width: 265px;
+    background-color: #151724;
+    color: white;
+  }
+}
+
+.product-select {
+  @extend .required-raw-mat-select;
+  width: 270px;
+}
+
+.client-select {
+  @extend .required-raw-mat-select;
+  margin: 0;
+  width: 270px;
+}
+.right-side-order-form {
+  max-height: 250px;
+  overflow: scroll;
+  input {
+    width: 50px;
+  }
+
+  ul {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    list-style: none;
+    height: 450px;
+    overflow: scroll;
+    div {
+      min-width: 150px;
+      max-width: 150px;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    input {
+      width: 40px;
+      height: 20px;
+    }
+
+    button {
+      width: 35px;
+    }
+  }
+}
+
+.searchbar-orders {
+  @extend .searchbar;
+  margin: 0px 30px 0px 20px;
+}
+
+.error-popup {
+  @extend .list-item-orders;
+  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: larger;
+  button {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}

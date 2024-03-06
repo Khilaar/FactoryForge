@@ -1,0 +1,134 @@
+.profilePage-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  font-size: 22px;
+  align-items: center;
+}
+
+.profilePage-frame {
+  @extend .background-frame;
+  height: 700px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 450px;
+}
+
+.profileBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.avatar-container {
+  margin-top: 75px;
+  border-radius: 50%;
+  max-height: 150px;
+  max-width: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.5s ease;
+
+  img {
+    min-height: 150px;
+    min-width: 200px;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.avatar-container-update {
+  @extend .avatar-container;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
+
+.profile-info-container {
+  display: flex;
+  gap: 15px;
+  height: 30px;
+  align-items: center;
+  flex-direction: column;
+
+  div {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+  }
+}
+
+.editButtonProfile {
+  margin-top: 100px;
+
+  &.save {
+    margin-top: 51px;
+  }
+}
+
+.profile-info-container-update {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-container {
+  align-items: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  input {
+    display: flex;
+    text-align: center;
+    width: 265px;
+    height: 25px;
+    background-color: #151724;
+    border: none;
+    color: whitesmoke;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 8px 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+  }
+  input:focus {
+    outline: none;
+  }
+
+  i {
+    position: absolute;
+    left: 12px;
+    color: white;
+    font-size: 20px;
+  }
+}
+
+.fullNameDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7.5px;
+
+  i {
+    font-size: 16px;
+  }
+  input {
+    width: 104px;
+  }
+}
+
+.backButton {
+  margin-top: -35px;
+  border: none;
+  background-color: transparent !important;
+  color: white;
+}

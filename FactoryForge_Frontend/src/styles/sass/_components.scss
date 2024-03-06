@@ -1,0 +1,1037 @@
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.layout-container {
+  display: flex;
+  font-family: "Roboto:wght@100;300;400;500;700&display=swap", sans-serif;
+  background: #41295a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to top,
+    #06071a,
+    #41295a
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #06071a, #2d1d3f 80%);
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.route-title {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  color: whitesmoke;
+  text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Inventory Component */
+.background-frame {
+  color: whitesmoke;
+  overflow: hidden;
+  padding: 1rem 2rem 2rem 2rem;
+  margin: 2rem 1rem 0rem 1rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  button {
+    background: #fcff00;
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    font-size: 13px;
+    width: 9em;
+    transition: all 0.4s;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+  }
+
+  button span:after {
+    content: "now";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.7s;
+  }
+
+  button:hover span {
+    padding-right: 3.55em;
+  }
+
+  button:hover span:after {
+    opacity: 4;
+    right: 0;
+  }
+  h2 {
+    padding: 10px 0px;
+    font-size: 25px;
+    font-weight: 400;
+  }
+  .see-more-button {
+    margin-right: 3rem;
+  }
+  .see-more-button span:after {
+    content: "more";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.7s;
+  }
+  .inventory-background-buttons {
+    margin-bottom: 2rem;
+  }
+}
+
+.background-frame-productinventory {
+  color: whitesmoke;
+  overflow: hidden;
+  padding: 1rem 2rem 2rem 2rem;
+  margin: 2rem auto;
+  margin-bottom: 0;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 80%;
+
+  @media screen and (max-width: 1700px) {
+    width: 90%;
+  }
+
+  button {
+    background: #fcff00;
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    font-size: 13px;
+    width: 9em;
+    transition: all 0.4s;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+  }
+
+  button span:after {
+    content: "now";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.7s;
+  }
+
+  button:hover span {
+    padding-right: 3.55em;
+  }
+
+  button:hover span:after {
+    opacity: 4;
+    right: 0;
+  }
+  h2 {
+    padding: 10px 0px;
+    font-size: 25px;
+    font-weight: 400;
+  }
+  .see-more-button {
+    margin-right: 3rem;
+  }
+  .see-more-button span:after {
+    content: "more";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.7s;
+  }
+}
+
+.list-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  /* From https://css.glass */
+  background: #191a24;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.9px);
+  -webkit-backdrop-filter: blur(2.9px);
+  border: 1px solid rgba(79, 79, 79, 0.51);
+  border-radius: 5px;
+  font-size: medium;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-weight: 400;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 1.5s ease;
+  span {
+    flex: 1;
+    margin-right: none;
+  }
+  span:last-child {
+    text-align: right;
+  }
+  button {
+    background-color: #191a24;
+    color: whitesmoke;
+  }
+  .x-button {
+    width: 1.2rem;
+    height: 1.2rem;
+    padding-left: 2rem;
+  }
+}
+.list-item:hover {
+  color: whitesmoke;
+  box-shadow:
+    inset 0 0 1px #7b37d1,
+    0 0 2px 1px #7b37d1;
+  background: #180c25;
+  transition: all 0.2s ease;
+}
+
+.list-item-header {
+  @extend .list-item;
+  font-weight: 700;
+  font-size: larger;
+  span {
+    padding-left: none;
+  }
+  span:last-child {
+    text-align: right;
+  }
+  .x-button {
+    color: transparent;
+    background-color: transparent;
+    padding-left: 2rem;
+  }
+}
+
+.list-item-price {
+  text-align: right;
+}
+span:last-child {
+  //text-align: right;
+}
+
+.list-item-header:hover {
+  box-shadow:
+    inset 0 0 1px #7b37d1,
+    0 0 2px 1px #7b37d1;
+  background: #180c25;
+  transition: all 0.2s ease;
+}
+/* Inventory Component End*/
+
+.inventory-bottom-part {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Inventory Low on*/
+
+.low-on-inventory {
+  width: 100%;
+  color: whitesmoke;
+  margin: 2rem 1rem 2rem 1rem;
+  padding: 2rem 2rem 2rem 2rem;
+  /* From https://css.glass */
+  background: rgba(255, 254, 254, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  h2 {
+    padding: 10px 0px;
+    font-size: 25px;
+    font-weight: 400;
+  }
+}
+/* Inventory Low on End*/
+
+/* Inventory Order Form*/
+.inventory-order-form {
+  color: whitesmoke;
+  width: 60%;
+  margin: 2rem 1rem 2rem 1rem;
+  padding: 2rem 2rem 2rem 2rem;
+  gap: 50rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  input {
+    background-color: #151724;
+    border: none;
+    color: whitesmoke;
+    height: 2rem;
+    font-size: 1.3rem;
+    border: solid #464646 1px;
+    border-radius: 5px;
+  }
+  input:focus {
+    outline: none;
+  }
+
+  button {
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    background: #fcff00;
+    color: black;
+    font-family: inherit;
+    text-align: center;
+    font-size: 13px;
+    width: 9em;
+    transition: all 0.4s;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+  }
+
+  button span:after {
+    content: "now";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.7s;
+  }
+
+  button:hover span {
+    padding-right: 3.55em;
+  }
+
+  button:hover span:after {
+    opacity: 4;
+    right: 0;
+  }
+}
+
+.quantity-span-add-raw-mat {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  gap: 2rem;
+  div {
+    display: flex;
+    gap: 4.5rem;
+  }
+  input {
+    margin: 0;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    width: auto;
+
+    div {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}
+
+.span-cost-add-raw-mat {
+  h3 {
+    padding-right: 4.5rem;
+  }
+}
+.inventory-order-form-raw-material {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  span {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+  button {
+    margin-left: auto;
+  }
+}
+
+.inventory-order-form-supplier {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 2rem;
+  span {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+  }
+  div {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    gap: 2rem;
+  }
+  input {
+    width: 3rem;
+  }
+}
+
+.inventory-order-form-message {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  height: 10rem;
+  span {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+.inventory-order-form-mat-input {
+  width: 70%;
+}
+
+.inventory-order-form-mat-input:focus {
+  color: whitesmoke;
+  box-shadow:
+    inset 0 0 1px #7b37d1,
+    0 0 2px 1px #7b37d1;
+}
+
+.inventory-order-form-mat-quantity-input {
+  width: 2rem;
+}
+.inventory-order-form-mat-quantity-input:focus {
+  color: whitesmoke;
+  box-shadow:
+    inset 0 0 1px #7b37d1,
+    0 0 2px 1px #7b37d1;
+}
+
+.inventory-order-form-message-input {
+  width: 70%;
+  height: 8rem;
+  background-color: #151724;
+  border: none;
+  color: whitesmoke;
+  font-size: 1rem;
+  resize: none;
+  border: solid #464646 1px;
+  border-radius: 5px;
+}
+
+.inventory-add-description-input {
+  width: 70%;
+  height: 8rem;
+  background-color: #151724;
+  border: none;
+  color: whitesmoke;
+  font-size: 1rem;
+  resize: none;
+  border: solid #464646 1px;
+  border-radius: 5px;
+}
+
+.inventory-add-product-input {
+  margin-bottom: 2rem;
+}
+.inventory-order-form-message-input:focus {
+  outline: none;
+  color: whitesmoke;
+  box-shadow:
+    inset 0 0 1px #7b37d1,
+    0 0 2px 1px #7b37d1;
+}
+
+/* Inventory Order Form End*/
+
+.items-list {
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+  padding: 2px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: transparent;
+    color: #fcff00;
+  }
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  width: 100%;
+}
+
+.list-item {
+  button {
+    color: #fcff00;
+    background-color: transparent;
+  }
+}
+
+.list-item:hover {
+  color: whitesmoke;
+  box-shadow:
+    inset 0 0 1px #7b37d1,
+    0 0 2px 1px #7b37d1;
+  background: #180c25;
+  transition: all 0.2s ease;
+}
+.title-and-searchbar {
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  align-items: center;
+}
+.searchbar {
+  display: flex;
+  width: auto;
+  gap: 2rem;
+  align-items: center;
+  input {
+    background-color: #151724;
+    border: none;
+    color: whitesmoke;
+    height: 2rem;
+    font-size: 1.3rem;
+    border: solid #464646 1px;
+    border-radius: 5px;
+  }
+  input:focus {
+    outline: none;
+    color: whitesmoke;
+    box-shadow:
+      inset 0 0 1px #7b37d1,
+      0 0 2px 1px #7b37d1;
+  }
+}
+
+.order-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  z-index: 1000;
+  color: whitesmoke;
+  width: 60%;
+  margin: 2rem 1rem 2rem 1rem;
+  padding: 2rem 2rem 2rem 2rem;
+  gap: 50rem;
+  /* From https://css.glass */
+  background: rgba(65, 41, 90, 0.83);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.8px);
+  -webkit-backdrop-filter: blur(11.8px);
+  border: 1px solid rgba(65, 41, 90, 0.3);
+  input {
+    background-color: #151724;
+    border: none;
+    color: whitesmoke;
+    height: 2rem;
+    font-size: 1.3rem;
+    border: solid #464646 1px;
+    border-radius: 5px;
+  }
+  input:focus {
+    outline: none;
+  }
+  button {
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    background: #fcff00;
+    color: black;
+    font-family: inherit;
+    text-align: center;
+    font-size: 13px;
+    width: 9em;
+    transition: all 0.4s;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+  }
+
+  button span:after {
+    content: "now";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.7s;
+  }
+
+  button:hover span {
+    padding-right: 3.55em;
+  }
+
+  button:hover span:after {
+    opacity: 4;
+    right: 0;
+  }
+}
+
+.add-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  color: whitesmoke;
+  width: 70%;
+  height: 70%;
+  overflow-y: scroll;
+  margin: 2rem 1rem 2rem 1rem;
+  padding: 2rem 2rem 2rem 2rem;
+  gap: 50rem;
+  min-width: 35rem;
+  /* From https://css.glass */
+  background: rgba(65, 41, 90, 0.83);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.8px);
+  -webkit-backdrop-filter: blur(11.8px);
+  border: 1px solid rgba(65, 41, 90, 0.3);
+  input {
+    background-color: #151724;
+    border: none;
+    color: whitesmoke;
+    height: 2rem;
+    font-size: 1.3rem;
+    border: solid #464646 1px;
+    border-radius: 5px;
+  }
+  input:focus {
+    outline: none;
+  }
+  button {
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    background: #fcff00;
+    color: black;
+    font-family: inherit;
+    text-align: center;
+    font-size: 13px;
+    width: 9em;
+    transition: all 0.4s;
+    height: 2rem;
+    cursor: pointer;
+  }
+
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.4s;
+  }
+
+  button span:after {
+    content: "now";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.7s;
+  }
+
+  button:hover span {
+    padding-right: 3.55em;
+  }
+
+  button:hover span:after {
+    opacity: 4;
+    right: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .add-form {
+    display: block;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.title-close-button-pop-up-form {
+  display: flex;
+  justify-content: space-between;
+  button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 2rem;
+  }
+  button:hover {
+    background-color: #6e248a;
+  }
+
+  button:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.input-fields-add-product {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+@media (max-width: 1200px) {
+  .input-fields-add-product {
+    display: block;
+  }
+}
+
+.list-required-raw-mat {
+  span {
+    padding: 0 1rem 0 1rem;
+  }
+  button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #6e248a;
+  }
+
+  button:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.4px);
+    -webkit-backdrop-filter: blur(2.4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0.2rem 0 0.2rem 0;
+    margin-bottom: 0.2rem;
+    padding-right: 1rem;
+  }
+}
+
+.list-required-mat li {
+  align-items: center;
+}
+.name-and-quantity-required-mat {
+  display: flex;
+  align-items: center;
+  width: 90%;
+
+  .name-required-mat-added {
+    margin-right: 3rem;
+    flex: 1;
+  }
+
+  input {
+    width: 3rem;
+    margin-left: auto;
+    display: flex;
+    text-align: center;
+  }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.required-raw-mat-select {
+  background-color: #151724;
+  border: none;
+  color: whitesmoke;
+  height: 2rem;
+  font-size: 1.3rem;
+  border: solid #464646 1px;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
+
+.right-side-add-product {
+  //width: 50%;
+}
+
+@media (max-width: 960px) {
+  .right-side-add-product {
+    display: block;
+    margin-bottom: 2rem;
+  }
+}
+
+.left-side-add-product {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.left-left-add-product {
+  display: flex;
+  flex-direction: column;
+}
+
+.qty-raw-mat-input {
+  padding-bottom: 0px;
+}
+
+@media (max-width: 960px) {
+  .left-side-add-product {
+    display: block;
+    margin-bottom: 2rem;
+  }
+}
+
+.inner-part-form {
+  margin-bottom: 3rem;
+  button {
+    margin-top: 3rem;
+  }
+  span {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+.add-client-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  input {
+    width: 15rem;
+  }
+}
+
+.background-frame-product-detail {
+  color: whitesmoke;
+  overflow: hidden;
+  padding: 1rem 2rem 2rem 2rem;
+  margin: 2rem auto;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 40%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: larger;
+  overflow: scroll;
+  .product-detail-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 30px;
+    height: 100%;
+    justify-content: space-around;
+  }
+
+  span {
+    display: flex;
+    justify-content: space-around;
+    p {
+      display: flex;
+      width: 30%;
+      min-width: 15rem;
+    }
+    .p-rigth {
+      width: 70%;
+      font-size: x-large;
+    }
+    .product-detail-rawMatList {
+      display: flex;
+      flex-direction: column;
+      width: 70%;
+    }
+  }
+  @media (max-width: 1600px) {
+    width: 85%;
+  }
+
+  .product-image-default {
+    width: 300px;
+    margin-top: 50px;
+    border-radius: 10%;
+    filter: brightness(90%);
+  }
+  button {
+    background: #fcff00;
+    display: inline-block;
+    border-radius: 7px;
+    border: none;
+    font-family: inherit;
+    text-align: center;
+    font-size: 13px;
+    width: 9em;
+    transition: all 0.4s;
+    height: 2rem;
+    cursor: pointer;
+  }
+}
+
+.title-close-button-pop-up-form-patch {
+  display: flex;
+  justify-content: space-between;
+  button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 2rem;
+  }
+  button:hover {
+    background-color: #6e248a;
+  }
+
+  button:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.add-form-product-detail {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  z-index: 1000;
+  color: whitesmoke;
+  width: 70%;
+  margin: 2rem 1rem 2rem 1rem;
+  padding: 2rem 2rem 2rem 2rem;
+  gap: 50rem;
+  min-width: 35rem;
+  /* From https://css.glass */
+  background: rgba(65, 41, 90, 0.83);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.8px);
+  -webkit-backdrop-filter: blur(11.8px);
+  border: 1px solid rgba(65, 41, 90, 0.3);
+  input {
+    background-color: #151724;
+    border: none;
+    color: whitesmoke;
+    height: 2rem;
+    font-size: 1.3rem;
+    border: solid #464646 1px;
+    border-radius: 5px;
+  }
+  input:focus {
+    outline: none;
+  }
+  .product-patch-input-span {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .product-patch-rawmat-span {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .product-patch-rawmat-span-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+  .item-delete-button-patch-rawmatreq {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}
+
+.list-item-client-sort {
+  @extend .list-item;
+  font-weight: 700;
+  font-size: larger;
+  button {
+    background-color: transparent;
+    color: transparent;
+    pointer-events: none;
+  }
+}
+
+.list-item-client-sort:hover {
+  box-shadow:
+    inset 0 0 1px #7b37d1,
+    0 0 2px 1px #7b37d1;
+  background: #180c25;
+  transition: all 0.2s ease;
+}

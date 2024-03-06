@@ -1,0 +1,126 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  color: white;
+  flex-direction: column;
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: background-color 5000s;
+    -webkit-text-fill-color: #fff !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  a:hover {
+    color: rgb(130, 33, 172);
+  }
+
+  .logo {
+    height: 300px;
+  }
+}
+
+.login-form {
+  height: 600px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 25px;
+  /* From https://css.glass */
+  background: rgba(255, 254, 254, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2.4px);
+  -webkit-backdrop-filter: blur(2.4px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  .input-span-login {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 100px;
+  }
+
+  .title-span-login {
+    display: flex;
+    height: 150px;
+    margin-bottom: 50px;
+    justify-content: center;
+  }
+
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    i {
+      position: absolute;
+      left: 10px;
+      color: white;
+    }
+  }
+
+  input {
+    border: none;
+    padding: 8px 8px 8px 35px;
+    border-radius: 5px;
+    width: 225px;
+    min-width: 50px;
+    font-size: 16px;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  button {
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 16px;
+    background-color: #fcff00;
+  }
+}
+
+#sign-up {
+  border-radius: 5px;
+  padding: 2.5px;
+  color: white;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+}
+
+.registration-form {
+  @extend .login-form;
+  height: 400px;
+  gap: 0px;
+}
+
+.button-span-login {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,331 @@
+.item_overlay_bg {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  .item_overlay {
+    @extend .low-on-inventory;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    color: white;
+    background-color: #191a24;
+    max-width: 30vw;
+    height: fit-content;
+    transform: translate(-50%, -50%);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    p {
+      overflow: hidden;
+    }
+  }
+}
+
+.search_results {
+  @extend .low-on-inventory;
+  position: fixed;
+  left: 35%;
+  top: 10%;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+  border-radius: 10px;
+  padding: 2vh;
+  gap: 1vh;
+  margin: 1vh;
+  background: #191a24;
+  overflow-y: scroll;
+  z-index: 1;
+  button {
+    border-radius: 7px;
+    border: none;
+    background: #fcff00;
+    color: black;
+    text-align: center;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 2vh;
+  }
+  .product {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+
+  .search_bar {
+    display: flex;
+    justify-content: space-between;
+    margin: 2vh;
+
+    input {
+      background-color: #151724;
+      color: whitesmoke;
+      height: 2rem;
+      font-size: 1.3rem;
+      border: solid #464646 1px;
+      border-radius: 5px;
+      margin-right: 1vh;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    button {
+      display: inline-block;
+      border-radius: 7px;
+      border: none;
+      background: #fcff00;
+      color: black;
+      font-family: inherit;
+      text-align: center;
+      font-size: 13px;
+      width: 9em;
+      transition: all 0.4s;
+      height: 2rem;
+      cursor: pointer;
+    }
+  }
+}
+.product {
+  @extend .list-item;
+  gap: 3rem;
+}
+
+.dash_top {
+  display: flex;
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  .left {
+    @extend .low-on-inventory;
+    display: flex;
+    flex-direction: column;
+
+    .top_products {
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+      padding-bottom: 2vh;
+    }
+
+    .tasks {
+      display: flex;
+      flex-direction: column;
+      border-radius: 20px;
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .task {
+      @extend .list-item;
+      justify-content: space-between;
+    }
+
+    .suppliers {
+      border-radius: 20px;
+      padding: 2vh;
+      overflow-x: hidden;
+
+      .supplier_container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem;
+
+        .supplier {
+          @extend .list-item;
+          flex-direction: column;
+          flex-grow: 1;
+          padding: 2vh;
+          gap: 1vh;
+        }
+      }
+    }
+  }
+
+  .right {
+    @extend .low-on-inventory;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .customer_orders {
+    border-radius: 20px;
+    padding: 2vh;
+
+    .header {
+      .tracking_num {
+        padding-right: 2.5rem;
+      }
+      .status {
+        padding-right: 5.5rem;
+      }
+    }
+
+    .order {
+      @extend .list-item;
+      justify-content: space-between;
+
+      //.tracking {
+      //  min-width: 6vw;
+      //}
+    }
+
+    .order-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+
+    .tracking {
+      min-width: 11vw;
+    }
+  }
+}
+
+.raw_material_inventory {
+  @extend .low-on-inventory;
+  width: 70%;
+  border-radius: 20px;
+  padding: 2vh;
+}
+
+.weekly_budget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2rem;
+
+  .pie_chart {
+    width: 50%;
+  }
+
+  .earnings {
+    display: flex;
+    margin: 2vh;
+    gap: 10vh;
+
+    .income {
+      color: green;
+    }
+
+    .expenses {
+      color: red;
+    }
+  }
+}
+@media (min-width: 2000px) {
+  .pie_chart {
+    width: 25%;
+  }
+  .raw_material_inventory {
+    width: 35%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 920px) {
+  .search_results {
+    left: 15%;
+    top: 15%;
+    width: 70%;
+  }
+  .dash_top {
+    flex-direction: column;
+    .left,
+    .right {
+      width: auto;
+      padding: 2vh;
+      margin: 1vh;
+      .tasks .task {
+        padding: 1vh;
+      }
+      .supplier_container {
+        flex-direction: column;
+      }
+      .customer_orders {
+        padding: 0;
+        .order {
+          padding: 1vh;
+        }
+        .header {
+          margin: 0;
+        }
+      }
+    }
+  }
+  .search {
+    flex-direction: column;
+    input {
+      width: 50vw;
+    }
+  }
+  .raw_material_inventory {
+    width: auto;
+  }
+}
+
+.loadingSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loading div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: white;
+  animation: loading 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.loading div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.24s;
+}
+
+.loading div:nth-child(2) {
+  left: 32px;
+  animation-delay: -0.12s;
+}
+
+.loading div:nth-child(3) {
+  left: 56px;
+}
+
+@keyframes loading {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
